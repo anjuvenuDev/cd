@@ -1,0 +1,17 @@
+for (i = 0; i < 5; i = i + 1)
+{
+    x = x + 2;
+}
+
+MOV i, #0
+L1:
+MOV R1, i
+CMP R1, #5
+JGE L2
+MOV R2, x
+ADD R2, R2, #2
+MOV x, R2
+ADD R1, R1, #1
+MOV i, R1
+JMP L1
+L2:

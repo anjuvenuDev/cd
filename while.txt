@@ -1,0 +1,19 @@
+while (m < 10)
+{
+    r = 16 * 5;
+    m = m + 1;
+}
+
+
+MOV R1, #16
+MOV R2, #5
+MUL R3, R1, R2
+MOV r, R3          ; Hoisted outside loop
+L1:
+MOV R4, m
+CMP R4, #10
+JGE L2
+ADD R4, R4, #1
+MOV m, R4
+JMP L1
+L2:

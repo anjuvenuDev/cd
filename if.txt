@@ -1,0 +1,18 @@
+if (a < b)
+{
+    max = b;
+}
+else
+{
+    max = a;
+}
+
+MOV R1, a
+MOV R2, b
+CMP R1, R2
+JGE L1
+MOV max, R2
+JMP L2
+L1:
+MOV max, R1
+L2:
